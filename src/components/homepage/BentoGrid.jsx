@@ -15,13 +15,13 @@ const images = [
 
 ];
 
-const BentoGrid = () => {
+const BentoGrid = ({ className = "" }) => {
 
   const layouts = [
 
 
     // Layout 3:
-    <div className="hidden md:grid grid-cols-8 grid-rows-4 auto-rows-fr gap-3 w-full max-w-xl h-[420px]">
+    <div className={`grid grid-cols-8 grid-rows-4 auto-rows-fr gap-2 md:gap-3 w-full max-w-xl h-[260px] sm:h-[320px] md:h-[420px] ${className}`}>
 
       <BentoItem
         src={images[0]}

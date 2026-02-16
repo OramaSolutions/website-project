@@ -116,10 +116,10 @@ const Applications = () => {
   ];
 
   return (
-    <section className="py-20 px-4 md:px-8">
+    <section className="py-16 md:py-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-center mb-4">From Automobile to Consumer Goods</h2>
-      <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 text-center max-w-3xl mx-auto">A wide range of applications for every manufacturing need.</p>
+      <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 md:mb-16 text-center max-w-3xl mx-auto">A wide range of applications for every manufacturing need.</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
         {cards.map((card, idx) => (
           <ApplicationCard key={idx} {...card} idx={idx} />

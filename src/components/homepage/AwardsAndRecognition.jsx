@@ -41,7 +41,7 @@ const awards = [
 
 const AwardsAndRecognition = () => {
   return (
-    <section className="relative py-20 px-4 md:px-8 bg-gradient-to-b from-[#071744] to-gray-600">
+    <section className="relative py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#071744] to-gray-600">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Fixed left content */}

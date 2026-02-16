@@ -29,7 +29,7 @@ import {
 const RotatingBorderDot = () => {
     return (
         <div className="absolute top-[51%] left-[50.325%] transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none">
-            <div className="relative w-70 h-70">
+            <div className="relative w-66 h-66 md:w-70 md:h-70">
                 {/* Circle Border */}
                 <div className="absolute inset-0 rounded-full border-2 border-blue-500" />
 
@@ -103,11 +103,11 @@ const NoCodePlatform = () => {
                             </span>
                         </div>
                     </div>
-                    <div className=" flex justify-center items-center">
-                        <div className="relative rounded-full  flex justify-center">
+                    <div className=" flex justify-center items-center ">
+                        <div className="relative rounded-full max-w-screen flex justify-center text-gray-600 dark:text-gray-200">
                             <Suite />
-                            <RotatingBorderDot />
-                            <img src='/images/icon_techstack.png' alt='Orama' className="w-90 h-90 absolute top-[53%] left-[50.5%] transform -translate-x-1/2 -translate-y-1/2" />
+                            {/* <RotatingBorderDot /> */}
+                            <img src='/images/icon_techstack.png' alt='Orama' className="w-90 h-90 absolute top-[53%] left-[50.5%] transform -translate-x-1/2 -translate-y-1/2 z-10" />
                         </div>
 
                     </div>

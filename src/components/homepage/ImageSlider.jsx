@@ -2,16 +2,16 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
-const MarqueeCarousel = ({ images, speed = 5, visibleItems = 6, gap = 60 }) => {
+const MarqueeCarousel = ({ images, speed = 8, visibleItems = 6, gap = 60 }) => {
   // Duplicate images for seamless looping
   const duplicatedImages = [...images, ...images, ...images];
 
   // Responsive visibleItems and gap
   const getResponsiveSettings = () => {
-    if (typeof window === 'undefined') return { items: visibleItems, gap };
-    if (window.innerWidth < 640) return { items: 2, gap: 12 }; // mobile
-    if (window.innerWidth < 1024) return { items: 3, gap: 24 }; // tablet
-    return { items: visibleItems, gap };
+    if (typeof window === 'undefined') return { items: visibleItems, gap, speedMultiplier: 1 };
+    if (window.innerWidth < 640) return { items: 2, gap: 12, speedMultiplier: 2.2 }; // mobile
+    if (window.innerWidth < 1024) return { items: 3, gap: 24, speedMultiplier: 1 }; // tablet
+    return { items: visibleItems, gap, speedMultiplier: 1 };
   };
 
   const [responsive, setResponsive] = useState(getResponsiveSettings());
@@ -24,12 +24,14 @@ const MarqueeCarousel = ({ images, speed = 5, visibleItems = 6, gap = 60 }) => {
   }, []);
 
   const itemWidth = `calc((100% - ${(responsive.items - 1) * responsive.gap}px) / ${responsive.items})`;
-  const [duration, setDuration] = useState(images.length * (10 / speed));
+  const [duration, setDuration] = useState(
+    images.length * (10 / (speed * responsive.speedMultiplier))
+  );
 
   // Adjust duration when props change
   useEffect(() => {
-    setDuration(images.length * (10 / speed));
-  }, [images.length, speed]);
+    setDuration(images.length * (10 / (speed * responsive.speedMultiplier)));
+  }, [images.length, speed, responsive.speedMultiplier]);
 
   return (
     <section className="relative py-20 px-4 md:px-8 bg-white dark:bg-[#020617] w-full overflow-hidden">

@@ -5,36 +5,36 @@ import { Camera, Zap, CheckCircle, Box, Cpu } from 'lucide-react';
 const VisionShowcase = () => {
   const features = [
     {
-      icon: <Zap className="w-5 h-5" />,
+      icon: <Zap className="w-4 h-4 sm:w-5 sm:h-5" />,
       title: "Real-time Defect Detection",
       description: "Our AI instantly spots imperfections in products as they move through production lines.",
     },
     {
-      icon: <Box className="w-5 h-5" />,
+      icon: <Box className="w-4 h-4 sm:w-5 sm:h-5" />,
       title: "Component Verification",
       description: "Automatically checks for missing parts or incorrect assemblies.",
     },
     {
-      icon: <CheckCircle className="w-5 h-5" />,
+      icon: <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />,
       title: "Precision Counting",
       description: "Accurately counts objects with 99.9% accuracy.",
     },
     {
-      icon: <Camera className="w-5 h-5" />,
+      icon: <Camera className="w-4 h-4 sm:w-5 sm:h-5" />,
       title: "Live Camera Analysis",
       description: "Processes live video feeds for instant decisions.",
     },
   ];
 
   return (
-    <section className="py-20 px-4 md:px-8 bg-gradient-to-b">
+    <section className="py-16 md:py-20 px-4 sm:px-6 md:px-8 bg-gradient-to-b">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-center mb-4">
             Vision-Powered <span className="font-medium text-blue-600 dark:text-blue-400">Manufacturing Intelligence</span>
@@ -128,9 +128,9 @@ const VisionShowcase = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1 }}
-                  className="absolute top-8 left-8 bg-black/80 text-white px-3 py-1.5 rounded-full text-sm flex items-center"
+                  className="absolute top-3 left-3 sm:top-8 sm:left-8 bg-black/80 text-white px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-full text-[10px] sm:text-sm flex items-center"
                 >
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse mr-2" />
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse mr-1.5 sm:mr-2" />
                   <span>AI Vision Active</span>
                 </motion.div>
 
@@ -139,7 +139,7 @@ const VisionShowcase = () => {
 
                   className="absolute top-1/2 left-1/2 rounded-lg"
                 >
-                  <div className="   bg-green-500 text-white text-xs px-2 py-1 rounded">
+                  <div className="bg-green-500 text-white text-[10px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 rounded">
                     Verified
                   </div>
                 </div>
@@ -155,13 +155,17 @@ const VisionShowcase = () => {
                   whileInView={{ opacity: 1}}
                   transition={{ duration: 0.7, delay: 0.2 + idx * 0.1 }}
                   viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-                  className="p-6 flex flex-col items-center text-center group z-10 bg-[#071744]/20"
+                  className="p-3 sm:p-6 flex flex-col items-center text-center group z-10 bg-[#071744]/60"
                 >
-                  <div className="mb-3 p-3 rounded-full bg-blue-600/10 text-blue-400 group-hover:bg-blue-600/20 transition-colors">
+                  <div className="mb-2 sm:mb-3 p-2 sm:p-3 rounded-full bg-blue-600/10 text-blue-400 group-hover:bg-blue-600/20 transition-colors">
                     {feature.icon}
                   </div>
-                  <h3 className="font-medium text-white mb-1.5">{feature.title}</h3>
-                  <p className="text-sm text-gray-400">{feature.description}</p>
+                  <h3 className="font-medium text-white text-xs sm:text-sm md:text-base leading-snug mb-1 sm:mb-1.5">
+                    {feature.title}
+                  </h3>
+                  <p className="text-[10px] sm:text-xs md:text-sm leading-tight sm:leading-relaxed text-gray-400">
+                    {feature.description}
+                  </p>
                 </motion.div>
               ))}
             </div>

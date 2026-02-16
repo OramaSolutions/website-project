@@ -98,12 +98,12 @@ const IndustryCard = ({ title, description, icon: Icon, color, idx }) => {
 
 const TopIndustries = () => {
   return (
-    <section className='py-20 px-4 md:px-8'>
+    <section className='py-16 md:py-20 px-4 sm:px-6 md:px-8'>
       <div className='max-w-7xl mx-auto'>
       <h2 className='text-3xl sm:text-4xl md:text-5xl font-light text-center mb-4'>
         Empowering Key Industries with AI
       </h2>
-      <p className='text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 text-center max-w-3xl mx-auto'>
+      <p className='text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 md:mb-16 text-center max-w-3xl mx-auto'>
         Purpose-built AI systems tailored for quality, throughput, and traceability across critical manufacturing sectors.
       </p>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto'>
