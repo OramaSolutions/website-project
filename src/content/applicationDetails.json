@@ -1,0 +1,182 @@
+{
+  "defect-detection": {
+    "title": "Defect Detection AI",
+    "tagline": "Automated visual quality inspection for high-speed production lines",
+    "description": "Detect cosmetic defects, scratches, dents, cracks, and surface anomalies in real time using production-ready computer vision models.",
+    "image": "/images/models/defectD.png",
+    "stats": [
+      { "value": "99%+", "label": "Detection Accuracy" },
+      { "value": "2x", "label": "Inspection Throughput" },
+      { "value": "70%", "label": "Error Reduction" },
+      { "value": "<2 weeks", "label": "Deployment Time" }
+    ],
+    "offerings": ["Vision AI", "Smart Shopfloor"],
+    "features": [
+      "Surface and cosmetic defect detection",
+      "Real-time line inspection and rejection",
+      "No-code model training and refinement",
+      "Traceable quality reports for audits"
+    ],
+    "workflow": [
+      "Upload labeled defect and good samples",
+      "Configure thresholds and model parameters",
+      "Run pilot inference on production images",
+      "Deploy to edge for real-time inspection"
+    ],
+    "useCases": [
+      "Body panel scratch and dent inspection",
+      "PCB solder and assembly defect detection",
+      "Packaging seal and label quality checks"
+    ]
+  },
+  "object-detection": {
+    "title": "Object Detection AI",
+    "tagline": "Reliable detection, localization, and counting of critical objects",
+    "description": "Identify, localize, and track objects on moving production lines for assembly checks, presence verification, and process control.",
+    "image": "/images/products/assembly-verification.png",
+    "stats": [
+      { "value": "95%+", "label": "Detection Precision" },
+      { "value": "24/7", "label": "Continuous Operation" },
+      { "value": "ms-level", "label": "Response Latency" },
+      { "value": "Edge", "label": "On-Prem Deployment" }
+    ],
+    "offerings": ["Vision AI", "No-Code Platform"],
+    "features": [
+      "Object presence and absence validation",
+      "Bounding-box based detection and tracking",
+      "Sequence-aware assembly checks",
+      "Production-safe edge inference"
+    ],
+    "workflow": [
+      "Upload and annotate object datasets",
+      "Train and fine-tune object detector",
+      "Validate precision/recall on edge samples",
+      "Deploy and monitor live drift"
+    ],
+    "useCases": [
+      "Assembly verification across stations",
+      "Container and part presence checks",
+      "Production line object tracking"
+    ]
+  },
+  "classification": {
+    "title": "Classification AI",
+    "tagline": "High-speed sorting and grading for consistent quality",
+    "description": "Classify products by type, quality grade, or category using robust AI models that adapt to production variability.",
+    "image": "/images/models/classF.png",
+    "stats": [
+      { "value": "99%+", "label": "Sorting Accuracy" },
+      { "value": "Real-time", "label": "Multi-Class Decisions" },
+      { "value": "Low COPQ", "label": "Quality Cost Impact" },
+      { "value": "Scalable", "label": "Multi-Line Rollout" }
+    ],
+    "offerings": ["Vision AI", "No-Code Platform"],
+    "features": [
+      "Quality-based multi-class sorting",
+      "Rule + AI combined decision pipelines",
+      "Dataset augmentation for edge cases",
+      "Model retraining with production data"
+    ],
+    "workflow": [
+      "Upload class-labeled dataset",
+      "Apply augmentation and class balancing",
+      "Train and evaluate with validation split",
+      "Export application for edge deployment"
+    ],
+    "useCases": [
+      "Product grading and binning",
+      "Good/NG visual classification",
+      "Variant identification on mixed lines"
+    ]
+  },
+  "ocr-barcode": {
+    "title": "OCR & Barcode Reading",
+    "tagline": "Automated text and code extraction at line speed",
+    "description": "Extract printed text, serial codes, QR/barcodes, and label fields to improve traceability, compliance, and zero-touch data capture.",
+    "image": "/images/products/ocr.png",
+    "stats": [
+      { "value": "Multi-language", "label": "OCR Support" },
+      { "value": "High-speed", "label": "Scan Throughput" },
+      { "value": "99%+", "label": "Readability Success" },
+      { "value": "Live", "label": "Database Validation" }
+    ],
+    "offerings": ["Vision AI", "Digitization"],
+    "features": [
+      "Printed and handwritten OCR support",
+      "1D/2D barcode and QR reading",
+      "Label validation with business rules",
+      "Batch and serial traceability integration"
+    ],
+    "workflow": [
+      "Capture and label OCR/barcode dataset",
+      "Train text and detection pipelines",
+      "Validate against expected schema",
+      "Deploy with pass/fail data logging"
+    ],
+    "useCases": [
+      "Expiry and batch code validation",
+      "Serialization and compliance checks",
+      "Label mismatch and print quality detection"
+    ]
+  },
+  "digitization": {
+    "title": "Shop Floor Digitization",
+    "tagline": "Convert paper-based workflows into structured real-time data",
+    "description": "Transform manual forms into searchable digital records with AI extraction, validation, and analytics-ready outputs.",
+    "image": "/images/offerings/shop_dig_after.png",
+    "stats": [
+      { "value": "95%", "label": "Faster Processing" },
+      { "value": "99%", "label": "Data Accuracy" },
+      { "value": "1.2k+", "label": "Forms Digitized" },
+      { "value": "75%", "label": "Cost Reduction" }
+    ],
+    "offerings": ["Digitization", "Smart Shopfloor"],
+    "features": [
+      "Paper-to-digital conversion in seconds",
+      "AI-assisted field extraction and validation",
+      "Searchable historical records",
+      "Real-time analytics and reporting"
+    ],
+    "workflow": [
+      "Capture paper form images",
+      "Extract structured fields with AI",
+      "Validate entries and correct anomalies",
+      "Publish data to dashboards and systems"
+    ],
+    "useCases": [
+      "Quality checklist digitization",
+      "Maintenance and safety form automation",
+      "Audit-ready production documentation"
+    ]
+  },
+  "sound-analysis": {
+    "title": "Sound Analysis AI",
+    "tagline": "Detect machine anomalies through audio intelligence",
+    "description": "Analyze machine sound signatures to classify normal and abnormal conditions for early fault detection and predictive quality control.",
+    "image": "/images/products/sound.png",
+    "stats": [
+      { "value": "99%+", "label": "Detection Accuracy" },
+      { "value": "24/7", "label": "Monitoring Runtime" },
+      { "value": "Real-time", "label": "Anomaly Alerts" },
+      { "value": "Edge", "label": "Factory Deployment" }
+    ],
+    "offerings": ["Sound Analysis", "Smart Shopfloor"],
+    "features": [
+      "OK/NG audio anomaly classification",
+      "Frequency-pattern based monitoring",
+      "Playback-linked diagnostic analysis",
+      "Scalable edge monitoring for equipment"
+    ],
+    "workflow": [
+      "Collect normal and anomaly audio samples",
+      "Train and tune sound classification model",
+      "Validate confidence across operating states",
+      "Deploy continuous monitoring on line"
+    ],
+    "useCases": [
+      "Predictive maintenance alerts",
+      "Motor and bearing fault detection",
+      "Cycle-level acoustic quality checks"
+    ]
+  }
+}

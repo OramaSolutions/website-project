@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: "Urbanist", sans-serif;
+  letter-spacing: 0.07em;
+}
+
+/* Custom theme classes */
+.theme-dark {
+  background-color: black !important;
+  color: white !important;
+}
+.theme-light {
+  background-color: white !important;
+  color: black !important;
+}
+.theme-bluedark {
+  background-color: #071744 !important;
+  color: white !important;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}

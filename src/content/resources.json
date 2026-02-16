@@ -1,0 +1,78 @@
+{
+  "blogs": [
+    {
+      "id": "cnn-basics-advanced",
+      "title": "Convolutional Neural Networks: From Basics to Advanced Architectures",
+      "description": "A practical guide to CNN fundamentals and production-ready model architectures for industrial computer vision.",
+      "category": "Computer Vision",
+      "date": "May 15, 2023",
+      "readTime": "8 min read",
+      "image": "/images/ai-vision.jpg",
+      "link": "/blogs"
+    },
+    {
+      "id": "yolo-vs-faster-rcnn",
+      "title": "Real-Time Object Detection: YOLO vs. Faster R-CNN",
+      "description": "Compare detection speed, deployment complexity, and accuracy tradeoffs for factory inspection use cases.",
+      "category": "Model Comparison",
+      "date": "June 2, 2023",
+      "readTime": "6 min read",
+      "image": "/images/object-detection.jpg",
+      "link": "/blogs"
+    },
+    {
+      "id": "cv-deployment-scale",
+      "title": "Deploying Computer Vision Models at Scale",
+      "description": "Best practices for rolling out reliable AI vision systems across multiple production lines.",
+      "category": "MLOps",
+      "date": "June 5, 2023",
+      "readTime": "9 min read",
+      "image": "/images/model-deployment.jpg",
+      "link": "/blogs"
+    }
+  ],
+  "caseStudies": [
+    {
+      "id": "automotive-defect-detection",
+      "title": "Automotive Defect Detection Line",
+      "industry": "Automotive",
+      "outcome": "Reduced breakages by 50%",
+      "summary": "Visual inspection and automated reject handling improved quality consistency and reduced manual rework.",
+      "offerings": ["Vision AI"],
+      "applications": ["Defect Detection", "Classification"],
+      "cta": {
+        "label": "Explore applications",
+        "type": "route",
+        "href": "/applications/defect-detection"
+      }
+    },
+    {
+      "id": "pharma-packaging-verification",
+      "title": "Pharma Packaging Verification",
+      "industry": "Pharma & Medical",
+      "outcome": "Improved compliance traceability",
+      "summary": "OCR and label inspection pipelines strengthened batch-level traceability and packaging QA workflows.",
+      "offerings": ["Digitization", "Vision AI"],
+      "applications": ["OCR & Barcode Reading", "Assembly Verification"],
+      "cta": {
+        "label": "Try no-code platform",
+        "type": "route",
+        "href": "/no-code-platform"
+      }
+    },
+    {
+      "id": "electronics-assembly-monitoring",
+      "title": "Electronics Assembly Monitoring",
+      "industry": "PCBs & Electronics",
+      "outcome": "Faster issue identification",
+      "summary": "Combined shopfloor monitoring and assembly checks surfaced process deviations earlier and reduced downtime.",
+      "offerings": ["Smart Shopfloor", "Vision AI"],
+      "applications": ["Assembly Verification", "Counting & Measurement"],
+      "cta": {
+        "label": "View assembly application",
+        "type": "route",
+        "href": "/applications/object-detection"
+      }
+    }
+  ]
+}
