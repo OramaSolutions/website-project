@@ -4,8 +4,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom';
-import LoadingPage from './components/LoadingPage.jsx';
 import { ThemeProvider } from './components/ThemeContext.jsx';
+import { Toaster } from "react-hot-toast";
 
 function Root() {
   // const [loading, setLoading] = useState(true);
@@ -27,6 +27,25 @@ function Root() {
       <BrowserRouter>
         <App />
       </BrowserRouter>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            borderRadius: "12px",
+            border: "1px solid #d1fae5",
+            background: "#ffffff",
+            color: "#1f2937",
+            boxShadow: "0 10px 25px rgba(2, 6, 23, 0.18)",
+          },
+          success: {
+            iconTheme: {
+              primary: "#059669",
+              secondary: "#ffffff",
+            },
+          },
+        }}
+      />
     </ThemeProvider>
   );
 }

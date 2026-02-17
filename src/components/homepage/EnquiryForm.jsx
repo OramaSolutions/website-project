@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { submitEnquiryForm } from "../../api/enquiryForm";
-import SuccessToast from "../SuccessToast";
+import toast from "react-hot-toast";
 
 const EnquiryForm = () => {
   const initialFormState = {
@@ -21,30 +21,6 @@ const EnquiryForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const toastTimerRef = useRef(null);
-
-  useEffect(() => {
-    return () => {
-      if (toastTimerRef.current) {
-        clearTimeout(toastTimerRef.current);
-      }
-    };
-  }, []);
-
-  const showSuccessToast = () => {
-    setSuccessMessage(
-      "Your enquiry has been submitted successfully. Our team will contact you shortly."
-    );
-
-    if (toastTimerRef.current) {
-      clearTimeout(toastTimerRef.current);
-    }
-
-    toastTimerRef.current = setTimeout(() => {
-      setSuccessMessage("");
-    }, 4000);
-  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,7 +35,9 @@ const EnquiryForm = () => {
     try {
       await submitEnquiryForm(form);
       setForm({ ...initialFormState });
-      showSuccessToast();
+      toast.success(
+        "Your enquiry has been submitted successfully. Our team will contact you shortly."
+      );
     } catch (error) {
       setSubmitError(error.message || "Failed to submit enquiry.");
     } finally {
@@ -69,12 +47,6 @@ const EnquiryForm = () => {
 
   return (
     <div className="w-full  max-w-3xl mx-auto ">
-      {successMessage && (
-        <SuccessToast
-          message={successMessage}
-          onClose={() => setSuccessMessage("")}
-        />
-      )}
       <div className="
         rounded-2xl
         border border-gray-200 dark:border-gray-700
