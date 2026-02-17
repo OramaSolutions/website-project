@@ -1,38 +1,80 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { submitEnquiryForm } from "../../api/enquiryForm";
+import SuccessToast from "../SuccessToast";
 
 const EnquiryForm = () => {
-  const [form, setForm] = useState({
+  const initialFormState = {
     name: "",
     email: "",
     company: "",
     designation: "",
     country: "",
+    state: "",
+    city: "",
     phone: "",
     enquiryType: "",
     message: "",
+  };
+
+  const [form, setForm] = useState({
+    ...initialFormState,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const toastTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimerRef.current) {
+        clearTimeout(toastTimerRef.current);
+      }
+    };
+  }, []);
+
+  const showSuccessToast = () => {
+    setSuccessMessage(
+      "Your enquiry has been submitted successfully. Our team will contact you shortly."
+    );
+
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
+
+    toastTimerRef.current = setTimeout(() => {
+      setSuccessMessage("");
+    }, 4000);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Enquiry Form Data:", form);
+    setSubmitError("");
+    setIsSubmitting(true);
 
-    setForm({
-      name: "",
-      email: "",
-      company: "",
-      phone: "",
-      enquiryType: "",
-      message: "",
-    });
+    try {
+      await submitEnquiryForm(form);
+      setForm({ ...initialFormState });
+      showSuccessToast();
+    } catch (error) {
+      setSubmitError(error.message || "Failed to submit enquiry.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="w-full  max-w-3xl mx-auto ">
+      {successMessage && (
+        <SuccessToast
+          message={successMessage}
+          onClose={() => setSuccessMessage("")}
+        />
+      )}
       <div className="
         rounded-2xl
         border border-gray-200 dark:border-gray-700
@@ -91,7 +133,21 @@ const EnquiryForm = () => {
             required
           />
 
-          
+          <Input
+            label="State*"
+            name="state"
+            value={form.state}
+            onChange={handleChange}
+            required
+          />
+
+          <Input
+            label="City*"
+            name="city"
+            value={form.city}
+            onChange={handleChange}
+            required
+          />
 
           <Input
             label="Phone Number*"
@@ -121,12 +177,12 @@ const EnquiryForm = () => {
                 outline-none
               "
             >
-              <option value="">Select an option</option>
-              <option value="assembly">Assembly Inspection AI</option>
-              <option value="cosmetic">Cosmetic Inspection AI</option>
-              <option value="dimensioning">Dimensioning AI</option>
-              <option value="label">Label Inspection AI</option>
-              <option value="general">General Enquiry</option>
+              <option value="" className="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800">Select an option</option>
+              <option value="assembly" className="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800">Assembly Inspection AI</option>
+              <option value="cosmetic" className="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800">Cosmetic Inspection AI</option>
+              <option value="dimensioning" className="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800">Dimensioning AI</option>
+              <option value="label" className="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800">Label Inspection AI</option>
+              <option value="general" className="text-gray-900 bg-white dark:text-gray-100 dark:bg-gray-800">General Enquiry</option>
             </select>
           </div>
 
@@ -160,6 +216,7 @@ const EnquiryForm = () => {
 
             <button
               type="submit"
+              disabled={isSubmitting}
               className="
                 items-center gap-2
                 rounded-lg
@@ -170,11 +227,16 @@ const EnquiryForm = () => {
                 shadow-md hover:shadow-lg
                 transition
                 w-full
+                disabled:opacity-60 disabled:cursor-not-allowed
               "
             >
-              Submit Enquiry
+              {isSubmitting ? "Submitting..." : "Submit Enquiry"}
             </button>
           </div>
+
+          {submitError && (
+            <p className="md:col-span-2 text-sm text-red-600">{submitError}</p>
+          )}
         </form>
       </div>
     </div>
